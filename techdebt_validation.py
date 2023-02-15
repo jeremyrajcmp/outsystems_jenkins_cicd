@@ -38,7 +38,7 @@ max_techdebt_lvl_info = next(filter(lambda x: x["Name"] == max_techdebt_lvl, lev
 if max_techdebt_lvl_info is None:
     raise TechDebtAnalysisException("Unknown tech debt level: {}".format(max_techdebt_lvl))
 max_techdebt_idx = levels["Levels"].index(max_techdebt_lvl_info)
-​
+
 # Check if tech debt level of each app in the pipeline scope is below defined threshold
 for manifest_app in trigger_manifest["ApplicationVersions"]:
     app_name = manifest_app["ApplicationName"].replace(' ', '_')

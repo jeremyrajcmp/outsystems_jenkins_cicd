@@ -4,6 +4,8 @@ import argparse
 import json
 
 # Custom exceptions
+class TechDebtAnalysisException(Exception):
+    pass
 # Local vars
 cat_security_guid = "6c87e98f-2ece-4df2-b791-d0c7eae15914"
 cat_architecture_guid = "f7fdbb75-f2f3-4199-9761-ae0fd08f0998"

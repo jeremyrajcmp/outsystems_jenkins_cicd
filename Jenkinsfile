@@ -1,3 +1,4 @@
+pipeline {
   agent any // Replace by specific label for narrowing down to OutSystems pipeline-specific agents. A dedicated agent will be allocated for the entire pipeline run.
   parameters {
     // Pipeline parameters are automatically filled by LT Trigger plugin

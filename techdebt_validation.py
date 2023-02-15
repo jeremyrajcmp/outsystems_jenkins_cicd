@@ -24,12 +24,8 @@ args = parser.parse_args()
 techdebt_data_folder = args.techdebt_data
 max_techdebt_lvl = args.max_techdebt_level
 max_sec_findings_count = args.max_security_findings
-#Parse Manifest file if it exists
-if args.manifest_file:
-    manifest_file = load_data("", args.manifest_file)
-else:
-    manifest_file = None
-trigger_manifest =  json.load(open(manifest_file, "r"))
+
+trigger_manifest =  json.load(open(args.manifest_file, "r"))
 levels = json.load(open("{}/TechDebt.levels.cache".format(techdebt_data_folder), "r"))
 
 print(

@@ -64,7 +64,7 @@ pipeline {
           // check AD tech debt
           sh script :"python3 -m outsystems.pipeline.fetch_tech_debt --artifacts \"${env.ArtifactsFolder}\" --ad_hostname ${env.ADHostname} --activation_code ${env.ADActivationCode} --api_key ${env.AIMentor_API_Key} --manifest_file \"${env.ArtifactsFolder}/trigger_manifest.cache\""
           sh script :"python3 -u techdebt_validation.py -m \"${env.ArtifactsFolder}/trigger_manifest.cache\" -d \"${env.ArtifactsFolder}/techdebt_data/\"", returnStatus: true, label: 'Run tech debt validation'
-          
+          echo __main__.TechDebtAnalysisException
         }        
       }
     }

@@ -65,7 +65,7 @@ pipeline {
           sh script :"python3 -m outsystems.pipeline.fetch_tech_debt --artifacts \"${env.ArtifactsFolder}\" --ad_hostname ${env.ADHostname} --activation_code ${env.ADActivationCode} --api_key ${env.AIMentor_API_Key} --manifest_file \"${env.ArtifactsFolder}/trigger_manifest.cache\""
           script {
              tech_debt_validation = sh (
-             script: 'python3 -u techdebt_validation.py -m \"${env.ArtifactsFolder}/trigger_manifest.cache\" -d \"${env.ArtifactsFolder}/techdebt_data/\"',
+             script: 'python3 -u techdebt_validation.py -m \'${env.ArtifactsFolder}/trigger_manifest.cache\' -d \'${env.ArtifactsFolder}/techdebt_data/\'',
              returnStdout: true
              ).trim()
             echo "Validation: ${tech_debt_validation}"
